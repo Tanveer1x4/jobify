@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Home from "./components/Home";
+import CandidateForm from './components/CandidateForm';
+// import { ProtectedRoute } from 'protected-route-react';
+import CandidateList from './components/CandidateList';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Private = ({Component})=>{
+  const isAuthenticated = useSelector((state)=>state.user.isAuthenticated);
+  console.log(isAuthenticated);
+  return isAuthenticated? <Component/> : <Navigate to="/login"/>
 }
+
+ 
+
+const App = () => {
+  return (
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Private Component={Home}/>}/>
+      <Route path='/form' element={<Private Component={CandidateForm}/>}/>
+      <Route path='/all' element={<Private Component={CandidateList}/>}/>
+      </Routes>
+      <Footer/>
+    </Router>
+  );
+};
 
 export default App;
