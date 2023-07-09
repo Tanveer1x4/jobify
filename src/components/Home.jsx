@@ -52,7 +52,7 @@ const Home = () => {
 
       <div className="container mx-auto px-4 mt-4">
   <div className="flex justify-center">
-    <div className="relative aspect-w-16 aspect-h-9">
+    <div className="relative aspect-w-16 aspect-h-9 mb-20">
       <video
         className=""
         controls

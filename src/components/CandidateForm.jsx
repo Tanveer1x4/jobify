@@ -55,7 +55,7 @@ const CandidateForm = () => {
     className="w-full bg-cover bg-center bg-gradient-to-b from-blue-500 to-purple-500 min-h-screen flex items-center justify-center"
     style={{ backgroundImage: `url(${backgroundImage})` }}
   >
-    <div className="bg-white rounded-lg p-8 bg-opacity-10 mt-4 mb-4 w-1/2">
+    <div className="bg-white rounded-lg p-8 bg-opacity-10 mt-4 mb-4 w-1/2 ">
       <h2 className="text-3xl text-white text-center font-bold mb-6">Candidate Form</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-6">
@@ -266,7 +266,7 @@ const CandidateForm = () => {
           />
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <button
             type="submit"
             className="bg-white text-blue-500 px-6 py-2 rounded font-semibold"

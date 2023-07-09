@@ -4,7 +4,7 @@ import { DiGithub } from 'react-icons/di';
 
 const Footer = () => {
   return (
-    <div className="bg-black bg-opacity-90 min-h-10vh py-4 px-6 flex flex-col md:flex-row items-center justify-between fixed bottom-0 w-full">
+    <div className="bg-black bg-opacity-90 min-h-10vh py-4 px-6 flex flex-col md:flex-row items-center justify-between  bottom-0 w-full">
       <div className="text-white">
         <h1 className="text-xl font-bold">Jobify</h1>
         <p className="text-sm text-purple-400">@tanveer</p>
